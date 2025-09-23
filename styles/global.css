@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --snitap-sun: #ffcd1e;
+  --snitap-sky-mid: #06b6d4;
+  --snitap-sky-light: #67e8f9;
+  --snitap-joy-mid: #db2777;
+  --snitap-joy-light: #f472b6;
+  --snitap-leaf-mid: #16a34a;
+  /* Base Colors */
+  --text: #000000;
+  --highlights: #000000;
+  --background: #fafafa;
+
+  /* Font Size */
+  --fs-sm: 0.75rem;
+  --fs-base: 1rem;
+  --fs-base-md: 1.25rem;
+  --fs-md: 1.5rem;
+  --fs-lg: 2rem;
+
+  /* Font Family */
+  --ff-base: "Montserrat", "sans-serif";
+}
+
+html,
+button {
+  font: 500 1rem/1.5 var(--ff-base);
+}
+h1,
+h2 {
+  font-family: "Syne", "sans-serif";
+}
+h1 {
+  font-size: var(--fs-lg);
+  line-height: 125%;
+}
+h2 {
+  font-size: var(--fs-md);
+  line-height: 120%;
+}
+
+@media (width >= 80em) {
+  :root {
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 2.5rem;
+    --fs-lg: 4rem;
+  }
+}
