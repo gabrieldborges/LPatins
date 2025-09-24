@@ -1,0 +1,147 @@
+#hero {
+  border: solid red 2px;
+
+  & div:nth-child(1) {
+    /* max-width: 43.5rem; */
+  }
+
+  & h1 div {
+    /* border: 2px solid black; */
+    --mask-height: 2.5rem;
+    display: inline-block;
+    overflow: hidden;
+    height: var(--mask-height);
+    width: min-content;
+    vertical-align: top;
+  }
+  & h1 {
+    max-width: 40rem;
+  }
+
+  & h1 span:nth-child(1) {
+    color: var(--snitap-sky-mid);
+  }
+  & h1 span:nth-child(2) {
+    color: var(--snitap-joy-mid);
+  }
+  & h1 span:nth-child(3) {
+    color: var(--snitap-leaf-mid);
+  }
+  & h1 span:nth-child(4) {
+    color: var(--snitap-sky-mid);
+  }
+  & h1 span {
+    /* border: solid blue 1px; */
+    display: block;
+    animation: slideUp 6s ease infinite;
+  }
+
+  --multiplier: 0.6;
+}
+@keyframes slideUp {
+  /* Essa animação é feita deslocando todos os spans para cima (também poderia ter sido feita aplicando a animação na div principal).
+  Para implementar responsividade, foram utilizadas duas variáveis. A primeira é o "mask-height"(responsiva pelo uso de @media) , utilizada para definir o tamanho da caixa
+  com overflow : hidden para que os itens sumam ao sair de dentro da caixa. 
+  a segunda variável é o multiplicador ""multiplier utilizado para reduzir o tamanho da animação de "overshoot" nos dispositivos mobile.
+   */
+  0%,
+  22% {
+    transform: translateY(0);
+  }
+  /* bounce */
+  23% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -1)) - (calc(15px * var(--multiplier))))
+    );
+  }
+  25% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -1)) + (calc(10px * var(--multiplier))))
+    );
+  }
+  27% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -1)) - (calc(5px * var(--multiplier))))
+    );
+  }
+
+  29% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -1)) + (calc(2px * var(--multiplier))))
+    );
+  }
+
+  /* bounce */
+
+  33%,
+  55% {
+    transform: translateY(calc(var(--mask-height) * -1));
+  }
+    /* bounce */
+  57% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -2)) - (calc(15px * var(--multiplier))))
+    );
+  }
+  59% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -2)) + (calc(10px * var(--multiplier))))
+    );
+  }
+  61% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -2)) - (calc(5px * var(--multiplier))))
+    );
+  }
+
+  63% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -2)) + (calc(2px * var(--multiplier))))
+    );
+  }
+
+  /* bounce */
+
+  66%,
+  88% {
+    transform: translateY(calc(var(--mask-height) * -2));
+  }
+    /* bounce */
+  90% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -3)) - (calc(15px * var(--multiplier))))
+    );
+  }
+  92% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -3)) + (calc(10px * var(--multiplier))))
+    );
+  }
+  94% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -3)) - (calc(5px * var(--multiplier))))
+    );
+  }
+
+  96% {
+    transform: translateY(
+      calc((calc(var(--mask-height) * -3)) + (calc(2px * var(--multiplier))))
+    );
+  }
+
+  /* bounce */
+
+  100% {
+    transform: translateY(calc(var(--mask-height) * -3));
+  }
+}
+
+@media (width >= 80em) {
+  #hero {
+    & h1 div {
+      --mask-height: 5rem;
+    }
+
+    --multiplier: 1;
+  }
+}
