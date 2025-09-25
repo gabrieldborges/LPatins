@@ -1,9 +1,10 @@
 #hero {
   /* border: solid red 2px; */
-
-  & div:nth-child(1) {
-    /* max-width: 43.5rem; */
-  }
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 
   & h1 div {
     /* border: 2px solid black; */
@@ -33,11 +34,104 @@
   & h1 span {
     /* border: solid blue 1px; */
     display: block;
-    animation: slideUp 6s ease infinite;
+    animation: slideUp 6s 2.3s ease infinite;
+  }
+  /* PATINS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  /* PATINS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  & > div:nth-child(1) {
+    /* order: 1; */
+  }
+
+  & > div:nth-child(2) {
+    /* order: 0; */
+    border: solid 3px red;
+    overflow: hidden;
+    display: block;
+    height: 19.5rem;
+    width: 19.5rem;
+
+    & .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    & img {
+      width: 100%;
+      position: absolute;
+
+      &[src*="Ellipse"] {
+        padding: 0.6rem;
+        transform: translateX(200%);
+        animation: slideIn 3s ease forwards;
+      }
+      &[src*="patins"] {
+        z-index: 1;
+        padding: 0.6rem;
+        transform: translateX(200%);
+        animation: slideIn 3s ease forwards;
+        animation-delay: 200ms;
+
+
+      }
+      &[src*="Stars1"] {
+        top: 30%;
+        max-width: 3.5rem;
+         transform: translateX(800%);
+        animation: slideIn 3s ease forwards;
+        animation-delay: 500ms;
+      }
+      &[src*="Stars2"] {
+        max-width: 1.7rem;
+        right: 0;
+        bottom: 35%;
+          transform: translateX(800%);
+        animation: slideIn 3s ease forwards;
+        animation-delay: 100ms;
+      }
+    }
   }
 
   --multiplier: 0.6;
 }
+
+/* Query */
+@media (width >= 80em) {
+  #hero {
+    flex-direction: row;
+
+    & h1 div {
+      --mask-height: 5rem;
+    }
+
+    --multiplier: 1;
+
+    & > div:nth-child(1) {
+      /* order: 0; */
+    }
+    & > div:nth-child(2) {
+      /* order: 0; */
+      width: 30.5rem;
+      height: 30.5rem;
+
+      & img {
+        &[src*="Ellipse"] {
+          padding: 1rem;
+        }
+        &[src*="patins"] {
+          padding: 0.8rem;
+        }
+        &[src*="Stars1"] {
+          max-width: 5.5rem;
+        }
+        &[src*="Stars2"] {
+          max-width: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+/* Animation */
 @keyframes slideUp {
   /* Essa animação é feita deslocando todos os spans para cima (também poderia ter sido feita aplicando a animação na div principal).
   Para implementar responsividade, foram utilizadas duas variáveis. A primeira é o "mask-height"(responsiva pelo uso de @media) , utilizada para definir o tamanho da caixa
@@ -136,13 +230,11 @@
   }
 }
 
-@media (width >= 80em) {
-  #hero {
-    & h1 div {
-      --mask-height: 5rem;
-    }
-
-    --multiplier: 1;
-    order: 0;
+@keyframes slideIn {
+  50% {
+    transform: translateX(-7%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
