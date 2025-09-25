@@ -1,0 +1,46 @@
+.banner {
+  border: solid deeppink;
+  width: 100%;
+  padding-block: 1.5rem;
+
+  & .scroller {
+    border: solid;
+    width: 100%;
+    overflow: hidden;
+    padding-block: 1rem;
+  }
+
+  & .rolling {
+    display: flex;
+    gap: 1.5rem;
+    animation: rolling 3s linear infinite; 
+  }
+  & .bg-gradient-animate{
+    background: linear-gradient(45deg , var(--snitap-joy-light),var(--snitap-sky-light));
+    background-size: 400%;
+    background-position: 0 50%;
+    animation: bgGradient 10s ease infinite;
+  }
+}
+
+@media (width >= 80em) {
+  .banner {
+    padding-block: 2.5rem;
+    & .bg-gradient-animate{
+    background: linear-gradient(45deg , var(--snitap-sky-light),var(--snitap-joy-light));
+   
+  }
+  }
+}
+
+
+@keyframes rolling{
+  to{
+    transform: translateX(-132px);
+  }
+}
+@keyframes bgGradient{
+  50% {
+    background-position: 100% 50%;
+  }
+}

@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
 
   & h1 div {
     /* border: 2px solid black; */
@@ -44,8 +46,8 @@
 
   & > div:nth-child(2) {
     /* order: 0; */
-    border: solid 3px red;
-    overflow: hidden;
+    /* border: solid 3px red; */
+    /* overflow: hidden; */
     display: block;
     height: 19.5rem;
     width: 19.5rem;
@@ -70,13 +72,11 @@
         transform: translateX(200%);
         animation: slideIn 3s ease forwards;
         animation-delay: 200ms;
-
-
       }
       &[src*="Stars1"] {
         top: 30%;
         max-width: 3.5rem;
-         transform: translateX(800%);
+        transform: translateX(800%);
         animation: slideIn 3s ease forwards;
         animation-delay: 500ms;
       }
@@ -84,7 +84,7 @@
         max-width: 1.7rem;
         right: 0;
         bottom: 35%;
-          transform: translateX(800%);
+        transform: translateX(800%);
         animation: slideIn 3s ease forwards;
         animation-delay: 100ms;
       }
@@ -98,6 +98,8 @@
 @media (width >= 80em) {
   #hero {
     flex-direction: row;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 
     & h1 div {
       --mask-height: 5rem;
