@@ -1,0 +1,73 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-inline: auto;
+}
+.button {
+  /* max-height: 72px; */
+  max-width: 17.75rem;
+
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  /* justify-content: center; */
+  /* background-color: grey; */
+  border-radius: 5rem;
+  transition: scale 350ms;
+  & img{
+    transition: scale 350ms;
+    transition-delay: 100ms;
+  }
+
+  &.buy {
+    padding: 1.5rem 3rem;
+    order: 1;
+    background-color: var( --snitap-sun);
+  }
+
+  &.play {
+    order: 0;
+    & span {
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      border-radius: 50%;
+    }
+  }
+  &:hover{
+    scale: 1.1;
+    & img{
+      scale: 1.2;
+    }
+  }
+
+
+}
+
+.shadow{
+  box-shadow: 
+  0 2px 5px rgb(0 0 0/ .1),
+  0 9px 9px rgb(0 0 0/ .09),
+  0 20px 12px rgb(0 0 0/ .05),
+  0 36px 15px rgb(0 0 0/ .01);
+}
+
+@media (width >= 80em) {
+  .buttons {
+    flex-direction: row;
+
+    gap: 2rem;
+    & .buy {
+      padding: 1.5rem 3rem;
+      order: 0;
+    }
+
+    & .play {
+      order: 1;
+    }
+  }
+}

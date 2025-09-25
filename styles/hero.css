@@ -1,5 +1,5 @@
 #hero {
-  border: solid red 2px;
+  /* border: solid red 2px; */
 
   & div:nth-child(1) {
     /* max-width: 43.5rem; */
@@ -77,7 +77,7 @@
   55% {
     transform: translateY(calc(var(--mask-height) * -1));
   }
-    /* bounce */
+  /* bounce */
   57% {
     transform: translateY(
       calc((calc(var(--mask-height) * -2)) - (calc(15px * var(--multiplier))))
@@ -106,7 +106,7 @@
   88% {
     transform: translateY(calc(var(--mask-height) * -2));
   }
-    /* bounce */
+  /* bounce */
   90% {
     transform: translateY(
       calc((calc(var(--mask-height) * -3)) - (calc(15px * var(--multiplier))))
@@ -143,5 +143,6 @@
     }
 
     --multiplier: 1;
+    order: 0;
   }
 }
